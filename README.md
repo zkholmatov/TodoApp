@@ -6,6 +6,8 @@ A demo is deployed on Render which can be viewed here: https://todoapp-8x06.onre
 
 *NOTE:* I am using the free version of Render so it may take a few minutes to open the website.
 
+
+
 ## FEATURES
 -Basic CRUD functionalities: Create, Read, Update, and Delete tasks to/from database
 
@@ -16,6 +18,8 @@ A demo is deployed on Render which can be viewed here: https://todoapp-8x06.onre
 -Mark tasks as complete/incomplete
 
 -Clean, modern user interface
+
+
 
 ## TECH STACK
 -**Backend:** Python, Django
