@@ -4,7 +4,7 @@ A simple ToDo list web application built with Django, Python, HTML, and CSS.
 
 A demo is deployed on Render which can be viewed [here](https://todoapp-8x06.onrender.com/)
 
-*NOTE:* I am using the free version of Render so it may take a few minutes to open the website.
+*Please note:* I am using the free version of Render so it may take a few minutes to open the website, sorry for the inconvenience.
 
 
 
