@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --accent-color: #5bff9a;
+    --accent-color-2: #ff2e4a;
+    --background-color-overdue: #5f242a;
+    --background-color-dark: rgb(19, 19, 29);
+    --background-color: rgb(30, 30, 41);
+    --background-color-light: rgb(37, 37, 54);
+    --text-color: white;
+    --text-color-dark: rgb(127, 127, 151);
+    --gray: rgb(83, 83, 83);
+}
+
+
+*{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+#profile__pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--background-color-dark);
+    border: 2px solid var(--accent-color);
+    padding: 5px;
+}
+
+h1 {
+    width: 90%;
+    font-size: 50px;
+    align-items: baseline;
+}
+
+h4, h5 {
+    background-color: transparent;
+    margin: 2px;
+}
+
+header{
+    margin: 50px 0 25px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40rem;
+}
+
+.divider {
+    width: 100%;
+    background-color: var(--gray);
+    height: 1px;
+    margin: 25px;
+}
+
+.search__bar form{
+    display: flex;
+    flex-direction: row;
+}
+
+.search__bar button{
+    padding: 0px 20px 0px 20px;
+    border-radius: 0px 25px 25px 0px;
+    border: 0;
+    background-color: var(--background-color-light);
+    outline: 1px solid var(--gray);
+}
+
+.search__bar button:hover{
+    box-shadow: 0 0 5px var(--accent-color);
+    background-color: var(--accent-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.search__bar form{
+    margin: 5px;
+}
+
+.img__small {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    background-image: url('static/images/checkmark.png');
+}
+
+.img__medium {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+a, img{
+    background-color: transparent;
+}
+
+#search__bar, .add__task__btn{
+    width: 35rem;
+    padding: 15.5px 20px;
+    background-color: var(--background-color-dark);
+    border: 0;
+    font-size: 15px;
+    margin: 25px 0;
+}
+
+#search__bar{
+    border-radius: 25px 0px 0px 25px;
+    outline: 1px solid var(--gray);
+}
+
+#search__bar:focus{
+    outline: 1px solid var(--accent-color);
+}
+
+.add__task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 35px;
+    width: 90%;
+    margin: 25px;
+    text-transform: uppercase;
+}
+
+.add__task__btn{
+    justify-content: center;
+    border-radius: 45px;
+    width: 20%;
+    padding: 10px;
+    transition: 0.2s;
+    background-color: var(--accent-color);
+    border: 5px solid var(--accent-color);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.add__task__btn:hover{
+    width: 30%;
+    box-shadow: 0 0 10px var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+.add__task__btn p{
+    color: black;
+}
+
+.tasks {
+    width: 90%;
+}
+
+.tasks li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--background-color-light);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.tasks .overdue {
+    background-color: var(--background-color-overdue);
+    font-weight: 900;
+}
+
+.tasks div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.task {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task__description{
+    max-height: 0;
+    overflow: hidden;
+}
+
+.expanded{
+    max-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.expanded div{
+    padding: 5px 15px;
+    text-align: justify;
+}
+
+.complete li{
+    background-color: var(--background-color-dark);
+}
+
+.complete p{
+    text-decoration: line-through;
+}
+
+div{
+    background-color: transparent;
+}
+
+p{
+    background-color: transparent;
+}
+
+a .img__small:hover{
+    transform: scale(1.1);
+    transition: 0.15s;
+}
+
+.text__secondary{
+    width: 100%;
+    color: var(--text-color-dark);
+    text-align: left;
+    margin: 10px;
+}
+
+.text__main{
+    color: var(--text-color);
+}
+
+.text__title{
+    font-size: 30px;
+    width: 100%;
+    margin: 50px 0 25px 0;
+    text-transform: uppercase;
+    align-items: baseline;
+}
+
+.btn__cancel, .btn__submit{
+    padding: 20px 40px;
+    border-radius: 35px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    border: none;
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn__cancel {
+    background-color: var(--accent-color-2);
+}
+
+.btn__cancel:hover {
+    box-shadow: 0 0 5px var(--accent-color-2);
+    transform: scale(1.1);
+}
+
+.btn__submit:hover {
+    box-shadow: 0 0 5px var(--accent-color);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* TASK FORM */
+
+#task__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.form__section p {
+    text-align: left;
+    width: 100%;
+}
+
+.form__section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+}
+
+#task__form p{
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#task__form #id_priority,
+#task__form #id_name,
+#task__form #id_due_date,
+#task__form textarea,
+#task__form select {
+    background-color: var(--background-color-dark);
+    padding: 1rem;
+    border-radius: 3px;
+    border: 1px solid var(--gray);
+    color: var(--text-color);
+    font-weight: 500;
+    outline: none;
+    margin: 10px 0;
+    width: 25rem;
+}
+
+#task__form #id_due_date {
+    width: 7rem;
+}
+
+.overdue {
+    color: var(--accent-color-2);
+    font-weight: 200;
+    margin: 10px;
+}
+
+.overdue .text__secondary {
+    font-weight: 400;
+}
+
+.priority {
+    background-color: var(--accent-color-2);
+    color: black;
+    padding: 10px 20px;
+    border-radius: 35px;
+    margin: 10px;
+}
+
+#id_priority {
+    height: 1.5rem;
+    width: 1.5rem;
+}

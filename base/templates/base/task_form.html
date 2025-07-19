@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+<header>
+    <h1>Add new task</h1>
+</header>
+
+
+<form action="" method="POST" id="task__form">
+    {% csrf_token %}
+    <div class="form__section">
+        <p class="text__main">Name</p>
+        {{form.name}}
+    </div>
+
+    <div class="form__section">
+        <p class="text__main">Description</p>
+        {{form.description}}
+    </div>
+
+    <div class="form__section">
+        <p class="text__main">Due date</p>
+        {{form.due_date}}
+    </div>
+
+    <div class="form__section">
+        <p class="text__main">Priority</p>
+        {{form.priority}}
+    </div>
+
+
+    <div class="selection">
+        <a href="{% url 'task' %}" class="btn__cancel" >Cancel</a>
+        <input type="submit" class="btn__submit" >
+    </div>
+</form>
+
+{% endblock content %}
