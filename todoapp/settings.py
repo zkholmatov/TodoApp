@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-(f#j)5iz%dl%lfwuchy$)bxpk@8txo7v$1u8eypg!142l@5p$d
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://todoapp-8x06.onrender.com/'
+    'https://todoapp-8x06.onrender.com/',
+    '*'
 ]
 
 
