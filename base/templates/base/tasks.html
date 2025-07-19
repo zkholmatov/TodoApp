@@ -10,6 +10,7 @@
 
 <div class="search__bar">
     <form action="{% url 'task' %}">
+        {% csrf_token %}
         <input id="search__bar" name="q" placeholder="Search">
         <button>
             {% if q == '' %}

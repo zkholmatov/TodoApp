@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://todoapp-8x06.onrender.com/']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
