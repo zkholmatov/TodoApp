@@ -23,15 +23,13 @@ A demo is deployed on Render which can be viewed [here](https://todoapp-8x06.onr
 
 ## SCREENSHOTS
 <p align="center">
+  <strong>Main page</strong><br>
   <img width="200" height="200" alt="Main Page" src="https://github.com/user-attachments/assets/97ed7d3f-5c7d-43b0-bc1b-c0905eb34f22" />
-  &nbsp;&nbsp;&nbsp;
-  <img width="200" height="200" alt="Add/Update Task" src="https://github.com/user-attachments/assets/7ee16fe8-5801-499d-b365-c23e8895b575" />
-</p>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;
 
-<p align="center">
-  <strong>Main page</strong>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong>Add/Update task</strong>
+  <strong>Add/Update task</strong><br>
+  <img width="200" height="200" alt="Add/Update Task" src="https://github.com/user-attachments/assets/7ee16fe8-5801-499d-b365-c23e8895b575" />
 </p>
 
 
