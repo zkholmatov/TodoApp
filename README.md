@@ -21,6 +21,11 @@ A demo is deployed on Render which can be viewed [here](https://todoapp-8x06.onr
 
 
 
+## SCREENSHOTS
+![alt text]<img width="1269" height="1262" alt="Screenshot 2025-07-18 204707" src="https://github.com/user-attachments/assets/97ed7d3f-5c7d-43b0-bc1b-c0905eb34f22" />
+
+
+
 ## TECH STACK
 - **Backend:** Python, Django
 
