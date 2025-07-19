@@ -24,7 +24,6 @@ A demo is deployed on Render which can be viewed [here](https://todoapp-8x06.onr
 ## SCREENSHOTS
 <p align="center">
   <strong>Main page</strong>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <strong>Add/Update task</strong>
 </p>
 <p align="center">
