@@ -8,14 +8,22 @@ A demo is deployed on Render which can be viewed here: https://todoapp-8x06.onre
 
 ## FEATURES
 -Basic CRUD functionalities: Create, Read, Update, and Delete tasks to/from database
+
 -Due dates, completed dates, priority tasks
+
 -Highlight overdue tasks
+
 -Mark tasks as complete/incomplete
+
 -Clean, modern user interface
 
 ## TECH STACK
 -**Backend:** Python, Django
+
 -**Frontend:** HTML, CSS
+
 -**Database:** SQLite
+
 -**Hosting:** Render (free version)
+
 -**Version Control:** Git & Github
