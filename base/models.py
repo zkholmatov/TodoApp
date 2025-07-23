@@ -7,7 +7,6 @@ class Task(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
     priority = models.BooleanField(default=False)
-    expand = models.BooleanField(default=False)
     complete = models.BooleanField(default=False)
     due_date = models.DateField(null=True, blank=True)
     completed_date = models.DateField(null=True, blank=True)

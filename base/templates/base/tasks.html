@@ -27,60 +27,58 @@
     {% for task in tasks %}
     {% if task.complete == False %}
     <li class="{% if task.overdue %}overdue{% endif %}">
-        <div class="task">
-            <div>
-                <a href="{% url 'complete-task' task.id %}" method='POST'>
-                    <img src="{% static 'images/circle.png' %}" class="img__small task__incomplete" alt="" 
-                    onmouseover='this.src="{% static 'images/checkmark.png' %}"'  
-                    onmouseleave='this.src="{% static 'images/circle.png' %}"'>
-                </a>
-                <p class="text__main">{{task.name}}</p>
-            </div>
+        <div class="task-item">
+            <div class="task__base">
+                <div>
+                    <a href="{% url 'complete-task' task.id %}" method='POST'>
+                        <img src="{% static 'images/circle.png' %}" class="img__small task__incomplete" alt="" 
+                        onmouseover='this.src="{% static 'images/checkmark.png' %}"'  
+                        onmouseleave='this.src="{% static 'images/circle.png' %}"'>
+                    </a>
+                    <p class="text__main">{{task.name}}</p>
+                </div>
 
 
-            <div>
-                {% if task.is_due_today %}
-                    <p class="text__secondary">Due today</p>
-                {% endif %}
-
-                {% if task.overdue %}
-                    <p class="overdue text__secondary"> {{task.due_date|timesince}} overdue</p>
-                {% elif task.priority %}
-                    <p class="priority">Priority</p>
-                {% endif %}
-
-                <a href="{% url 'update-task' task.id %}">
-                    <img src="{% static 'images/edit.png' %}" class="img__small" alt="">
-                </a>
-
-                <a href="{% url 'toggle-description' task.id %}">
-                    {% if task.expand %}
-                        <img src="{% static 'images/up-arrow.png' %}" class="img__small" alt="">
-                    {% else %}
-                        <img src="{% static 'images/down-arrow.png' %}" class="img__small" alt="">
+                <div>
+                    {% if task.is_due_today %}
+                        <p class="text__secondary">Due today</p>
                     {% endif %}
-                </a>
 
-            </div>
-        </div>
-        <div class="task__description {% if task.expand %} expanded {% endif %} ">
-            <div>
-                {% if task.description %}
-                    <p class="text__secondary">{{task.description}}</p>
-                {% else %}
-                    <p class="text__secondary">No description...</p>
-                {% endif %}
-            </div>
+                    {% if task.overdue %}
+                        <p class="overdue text__secondary"> {{task.due_date|timesince}} overdue</p>
+                    {% elif task.priority %}
+                        <p class="priority">Priority</p>
+                    {% endif %}
 
-            <div>
-                <img src="{% static 'images/calendar.png' %}" class="img__small" alt="">
-                {% if task.is_due_today %}
-                <p>Due today</p>
-                {% elif task.due_date %}
-                <p>Due {{task.due_date|date:'m/d/y'}}</p>
-                {% endif %}
-            </div>
+                    <a href="{% url 'update-task' task.id %}">
+                        <img src="{% static 'images/edit.png' %}" class="img__small" alt="">
+                    </a>
 
+                    <a href="" class="expand-toggle-button">
+                        <img src="{% static 'images/up-arrow.png' %}" class="img__small expand-icon-up" alt="">
+                        <img src="{% static 'images/down-arrow.png' %}" class="img__small expand-icon-down" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <div class="task__description">
+                <div>
+                    {% if task.description %}
+                        <p class="text__secondary">{{task.description}}</p>
+                    {% else %}
+                        <p class="text__secondary">No description...</p>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <img src="{% static 'images/calendar.png' %}" class="img__small" alt="">
+                    {% if task.is_due_today %}
+                    <p class="text__main">Due today</p>
+                    {% elif task.due_date %}
+                    <p class="text__main">Due {{task.due_date|date:'m/d/y'}}</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </li>
     {% endif %}
@@ -98,7 +96,7 @@
     {% for task in tasks %}
     {% if task.complete == True %}
     <li>
-        <div class="task">
+        <div class="task__base">
             <div>
                 <a href="{% url 'incomplete-task' task.id %}" method='POST'>
                     <img src="{% static 'images/checkmark.png' %}" class="img__small" alt=""
@@ -133,6 +131,29 @@
         <p class="text__main">Add task</p>
     </a>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const expandButtons = document.querySelectorAll('.expand-toggle-button');
+
+        expandButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const taskItem = button.closest('.task-item');
+
+                if (taskItem){
+                    taskItem.classList.toggle('expanded');
+
+                    const descriptionDiv = taskItem.querySelector('.task__description');
+                    if(descriptionDiv){
+                        descriptionDiv.classList.toggle('expanded');
+                    }
+                }
+            });
+        });
+    });
+</script>
 
 
 {% endblock content %}

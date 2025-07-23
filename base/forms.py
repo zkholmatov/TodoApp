@@ -19,5 +19,3 @@ class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = ['name', 'description', 'due_date', 'priority']
-
-        

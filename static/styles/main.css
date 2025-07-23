@@ -3,10 +3,10 @@
 :root {
     --accent-color: #5bff9a;
     --accent-color-2: #ff2e4a;
-    --background-color-overdue: #5f242a;
-    --background-color-dark: rgb(19, 19, 29);
-    --background-color: rgb(30, 30, 41);
-    --background-color-light: rgb(37, 37, 54);
+    --background-color-overdue: #4b1d22;
+    --background-color-dark: #131314;
+    --background-color: #1b1b1d;
+    --background-color-light: #28282b;
     --text-color: white;
     --text-color-dark: rgb(127, 127, 151);
     --gray: rgb(83, 83, 83);
@@ -36,10 +36,16 @@
     padding: 5px;
 }
 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
-    width: 90%;
+    width: 100%;
     font-size: 50px;
-    align-items: baseline;
+    align-items: center;
 }
 
 h4, h5 {
@@ -176,13 +182,29 @@ a, img{
     font-weight: 900;
 }
 
-.tasks div{
+.task-item{
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-div.task {
+.task__base, .task__description{
+    display: flex;
+    flex-direction: row;
+}
+
+.task__description{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.task__base div, .task__description div{
+    display: flex;
+    flex-direction: row;
+}
+
+.task__base {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -192,19 +214,27 @@ div.task {
 .task__description{
     max-height: 0;
     overflow: hidden;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.expanded{
-    max-height: 500px;
-    width: 100%;
+.task__description.expanded{
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.expand-icon-up{
+    display: none;
+}
+
+.task-item.expanded .expand-icon-up{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.expanded div{
-    padding: 5px 15px;
-    text-align: justify;
+.task-item.expanded .expand-icon-down{
+    display: none;
 }
 
 .complete li{
@@ -237,6 +267,7 @@ a .img__small:hover{
 
 .text__main{
     color: var(--text-color);
+    margin: 10px;
 }
 
 .text__title{
@@ -292,7 +323,8 @@ a .img__small:hover{
 .form__section{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: baseline;
+    justify-content: le;
 }
 
 .selection {
@@ -305,7 +337,8 @@ a .img__small:hover{
 
 #task__form p{
     text-align: left;
-    display: block;
+    display: flex;
+    align-items: baseline;
     width: 100%;
 }
 
@@ -342,12 +375,14 @@ a .img__small:hover{
 .priority {
     background-color: var(--accent-color-2);
     color: black;
-    padding: 10px 20px;
     border-radius: 35px;
-    margin: 10px;
+    padding: 10px 15px;
 }
 
 #id_priority {
     height: 1.5rem;
-    width: 1.5rem;
+}
+
+script{
+    display: none;
 }
